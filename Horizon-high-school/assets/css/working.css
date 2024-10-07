@@ -1,0 +1,122 @@
+:root {
+    --blue: #007BFF;
+    --green: #28A745;
+    --yellow: #FFC107;
+    --red: #DC3545;
+    --purple: #6F42C1;
+    --white: #FFFFFF;
+    --black: #333;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Main Section Styling */
+.work-in-progress {
+    text-align: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+p {
+    font-size: 1.2rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp 2s 1s forwards;
+}
+
+/* Waving Hand Animation */
+.wave {
+    font-size: 3rem;
+    animation: wave 2s infinite;
+    margin-bottom: 2rem;
+}
+
+/* Bouncing Balls Container */
+.bouncing-balls-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end; /* Align balls at the bottom */
+    position: relative; /* Needed for absolute positioning of balls */
+    width: 100%; /* Full width of the page */
+    height: 100px; /* Height for the container */
+}
+
+/* Bouncing Ball Styling */
+.bouncing-ball {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute; /* Allow balls to move freely */
+    animation: bounce 2s infinite alternate; /* Changed duration to 2s */
+}
+
+/* Bouncing Ball Colors */
+.ball1 { background-color: var(--blue); animation-delay: 0s; left: 10%; }
+.ball2 { background-color: var(--green); animation-delay: 0.2s; left: 30%; }
+.ball3 { background-color: var(--yellow); animation-delay: 0.4s; left: 50%; }
+.ball4 { background-color: var(--red); animation-delay: 0.6s; left: 70%; }
+.ball5 { background-color: var(--purple); animation-delay: 0.8s; left: 90%; }
+
+/* Bouncing Ball Animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Start at the original position */
+    }
+    50% {
+        transform: translateY(-50px); /* Bounce up */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-Up Animation */
+@keyframes slideUp {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Waving Hand Animation */
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+}
